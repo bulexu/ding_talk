@@ -7,7 +7,7 @@ bin-release/
 # Other files and folders
 .settings/
 coverage
-spec/fixtures/*.local.*
+spec/fixtures/*.local.yml
 # Executables
 *.swf
 *.air

@@ -32,7 +32,4 @@ RSpec.configure do |config|
     end
   end
 
-  config.before(:each) do
-    # allow_any_instance_of(DingTalk::Request).to receive(:request) {DingTalk::MockApi} if ENV['DEBUG'] == 'YES'
-  end
 end
