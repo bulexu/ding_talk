@@ -9,8 +9,6 @@ require 'ding_talk/cipher'
 require 'ding_talk/config'
 require 'ding_talk/api/base'
 require 'ding_talk/api/agent'
-require 'ding_talk/api/suite'
-require 'ding_talk/api/corp'
 
 module DingTalk
   AUTHORIZE_ENDPOINT        = 'https://oapi.dingtalk.com/'.freeze
