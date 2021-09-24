@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c868c034-d127-4df6-900b-ca3c4ab4a2fa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/ding_talk/api/agent_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/ding_talk/api/agent_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
       <updated>1631951681760</updated>
       <workItem from="1631951686911" duration="435000" />
       <workItem from="1631952156920" duration="46969000" />
-      <workItem from="1632454695736" duration="875000" />
+      <workItem from="1632454695736" duration="1149000" />
     </task>
     <servers />
   </component>

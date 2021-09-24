@@ -66,6 +66,7 @@ RSpec.describe DingTalk do
       expect(members.any?{|member| member['userid'] == userid}).to eq true
     end
 
+    # todo 未通过
     # https://open-dev.dingtalk.com/apiExplorer?spm=ding_open_doc.document.0.0.1ef74981xEcnf9#/jsapi?api=runtime.permission.requestAuthCode
     it 'user_get_userinfo_by_sns' do
       code = 'f939cf4de2d830789d2cf7f63d69499b'
