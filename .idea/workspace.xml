@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c868c034-d127-4df6-900b-ca3c4ab4a2fa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ding_talk.rb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ding_talk.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ding_talk/api/corp.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ding_talk/api/suite.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ding_talk/token/corp_token.rb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/ding_talk/token/suite_token.rb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/ding_talk/api/agent_spec.rb" beforeDir="false" afterPath="$PROJECT_DIR$/spec/ding_talk/api/agent_spec.rb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +23,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spec/fixtures" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
@@ -53,7 +49,9 @@
       <updated>1631951681760</updated>
       <workItem from="1631951686911" duration="435000" />
       <workItem from="1631952156920" duration="46969000" />
-      <workItem from="1632454695736" duration="1492000" />
+      <workItem from="1632454695736" duration="3440000" />
+      <workItem from="1632463158063" duration="23000" />
+      <workItem from="1632463204078" duration="1492000" />
     </task>
     <servers />
   </component>
@@ -71,5 +69,27 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/ding_talk/request.rb</url>
+          <line>25</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/lib/ding_talk/request.rb</url>
+          <line>59</line>
+          <properties myBlockOrdinal="-1">
+            <option name="block-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

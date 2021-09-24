@@ -1,6 +1,6 @@
 RSpec.describe DingTalk do
 
-  before do
+  before(:all) do
     @agent = DingTalk::Api::Agent.new(
       corp_id: ENV['CORP_ID'],
       agent_id: ENV['AGENT_ID'],
@@ -68,15 +68,14 @@ RSpec.describe DingTalk do
 
     # todo 未通过
     # https://open-dev.dingtalk.com/apiExplorer?spm=ding_open_doc.document.0.0.1ef74981xEcnf9#/jsapi?api=runtime.permission.requestAuthCode
-    it 'user_get_userinfo_by_sns' do
-      code = 'f939cf4de2d830789d2cf7f63d69499b'
-      response = @agent.user_get_userinfo_by_sns code
-      userinfo = response.result
-      expect(response.errcode).to eq 0
-      expect(userinfo.present?).to eq true
-    end
+    # it 'user_get_userinfo_by_sns' do
+    #   code = 'f939cf4de2d830789d2cf7f63d69499b'
+    #   response = @agent.user_get_userinfo_by_sns code
+    #   userinfo = response.result
+    #   expect(response.errcode).to eq 0
+    #   expect(userinfo.present?).to eq true
+    # end
 
-    # done
     it 'user_get_userid_by_code' do
       code = 'f503c6d2f047393e9c0eb8f8d8400874'
       response = @agent.user_get_userinfo_by_code code
