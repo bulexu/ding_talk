@@ -1,4 +1,5 @@
+/.bundle/
 /coverage/
-/spec/fixtures/*.local.yml
+/spec/fixtures/config.yml
 /pkg/
 /.idea/
