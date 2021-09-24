@@ -3,3 +3,4 @@ coverage
 spec/fixtures/config.yml
 pkg
 .idea
+.rspec_status

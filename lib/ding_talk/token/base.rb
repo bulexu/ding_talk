@@ -13,18 +13,6 @@ module DingTalk
         redis.hget(redis_key, token_key)
       end
 
-      def nonce
-        SecureRandom.hex(8)
-      end
-
-      def timestamp
-        Time.now.to_i.to_s
-      end
-
-      def timestamp_q
-        (Time.now.to_i * 1000).to_s
-      end
-
       def update_token
         result = refresh_token
         value = result.send(token_key)
