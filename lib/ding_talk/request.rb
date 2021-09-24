@@ -20,13 +20,24 @@ module DingTalk
       end
     end
 
+    def put(path, post_body, post_header = {})
+      request(path, post_header) do |url, header|
+        params = header.delete(:params)
+        httprb.headers(header).put(url, params: params, json: post_body, ssl_context: ssl_context)
+      end
+    end
+
     def post(path, post_body, post_header = {})
       request(path, post_header) do |url, header|
         params = header.delete(:params)
-        if ENV['DEBUG'] == 'YES'
-          puts "[DingTalk] request post_body: #{post_body}"
-        end
         httprb.headers(header).post(url, params: params, json: post_body, ssl_context: ssl_context)
+      end
+    end
+
+    def delete(path, get_header = {})
+      request(path, get_header) do |url, header|
+        params = header.delete(:params)
+        httprb.headers(header).delete(url, params: params, ssl_context: ssl_context)
       end
     end
 

@@ -17,9 +17,13 @@ module DingTalk
           post 'chat/update', payload
         end
 
-        # def chat_get chat_id
-        #   get 'chat/get', { params: { chatid: chat_id } }
-        # end
+        def chat_get chat_id
+          get 'chat/get', { params: { chatid: chat_id } }
+        end
+
+        def chat_get_qrcode chat_id, userid
+          post 'topapi/chat/qrcode/get', { chatid: chat_id, userid: userid }
+        end
 
         def text_chat_send chat_id, content
           chat_send chat_id, { text: { content: content }, msgtype: 'text' }

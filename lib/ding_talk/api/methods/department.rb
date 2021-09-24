@@ -19,6 +19,16 @@ module DingTalk
           post 'topapi/v2/department/get', {dept_id: department_id}
         end
 
+        # parent_id 父部门ID。 如果不传，默认部门为根部门，根部门ID为1。
+        # fetch_child 是否递归部门的全部子部门
+        def departments parent_id=1, fetch_child=false
+          get 'department/list', {
+            access_token: access_token,
+            id: parent_id,
+            fetch_child: fetch_child
+          }
+        end
+
         # https://developers.dingtalk.com/document/app/obtain-the-department-list-v2
         def department_children department_id=nil
           if department_id.nil?

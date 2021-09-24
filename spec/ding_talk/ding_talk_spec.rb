@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 RSpec.describe DingTalk do
 
   it "has a version number and author" do

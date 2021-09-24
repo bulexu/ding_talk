@@ -2,9 +2,6 @@ module DingTalk
   module Api
     class Agent < Base
 
-      include Methods::Message
-      include Methods::Chat
-
       attr_reader :agent_id, :app_key, :app_secret
 
       def initialize(options={})
@@ -14,6 +11,13 @@ module DingTalk
         @app_secret = options.delete(:app_secret)
         super(options)
       end
+
+      def post(path, payload={}, headers = {})
+        with_token(headers[:params]) do |params|
+          request.post path, payload, headers.merge(params: params)
+        end
+      end
+
 
     end
   end

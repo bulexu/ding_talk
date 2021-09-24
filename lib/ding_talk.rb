@@ -12,9 +12,9 @@ require 'ding_talk/api/agent'
 
 module DingTalk
   AUTHORIZE_ENDPOINT        = 'https://oapi.dingtalk.com/'.freeze
-  AUTHORIZE_ENDPOINT_V2     = 'https://api.dingtalk.com/'.freeze
-  HTTP_OK_STATUS          = [200, 201].freeze
-  SUCCESS_CODE            = 0
+  AUTHORIZE_ENDPOINT_OPEN   = 'https://api.dingtalk.com/'.freeze
+  HTTP_OK_STATUS            = [200, 201].freeze
+  SUCCESS_CODE              = 0
 
   # Exceptions
   class RedisNotConfigException < RuntimeError; end

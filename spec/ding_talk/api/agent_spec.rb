@@ -1,3 +1,5 @@
+require 'spec_helper'
+
 RSpec.describe DingTalk do
 
   before(:all) do
@@ -8,6 +10,7 @@ RSpec.describe DingTalk do
       app_secret: ENV['APP_SECRET']
     )
     @userid = 'manager2922'
+    @unionid = '98h4XTySTI22ZjxIvLezvQiEiE'
     @image_id = '@lADPDe7s1DooS4nNBVXNCAA'
     @video_id = '@lAbPDe7s1Do8azHOdBgg4s5fwKMM'
     @voice_id = '@lAXPDf0izs1NbB3Obyx7m85DN3LY'
@@ -32,8 +35,36 @@ RSpec.describe DingTalk do
       expect(userid.present?).to eq true
     end
 
+    it 'user_create' do
+      payload = {
+        userid: 'zhangsan',
+        name: '张三',
+        mobile: '17666228711',
+        dept_id_list: '1'
+      }
+      response = @agent.user_create payload
+      userid = response.result['userid']
+      expect(response.errcode).to eq 0
+      expect(userid).to eq 'zhangsan'
+    end
+
+    it 'user_update' do
+      payload = {
+        name: '张三33',
+        mobile: '17666228711',
+        dept_id_list: '1'
+      }
+      response = @agent.user_update 'zhangsan', payload
+      expect(response.errcode).to eq 0
+    end
+
+    it 'user_delete' do
+      response = @agent.user_delete 'zhangsan'
+      expect(response.errcode).to eq 0
+    end
+
     it 'user_get' do
-      response = @agent.user_get userid
+      response = @agent.user_get @userid
       userinfo = response.result
       unionid = userinfo['unionid']
       department_ids = userinfo['dept_id_list']
@@ -68,13 +99,13 @@ RSpec.describe DingTalk do
 
     # todo 未通过
     # https://open-dev.dingtalk.com/apiExplorer?spm=ding_open_doc.document.0.0.1ef74981xEcnf9#/jsapi?api=runtime.permission.requestAuthCode
-    # it 'user_get_userinfo_by_sns' do
-    #   code = 'f939cf4de2d830789d2cf7f63d69499b'
-    #   response = @agent.user_get_userinfo_by_sns code
-    #   userinfo = response.result
-    #   expect(response.errcode).to eq 0
-    #   expect(userinfo.present?).to eq true
-    # end
+    it 'user_get_userinfo_by_sns' do
+      code = 'c3062785f4453a99862d8686abc88680'
+      response = @agent.user_get_userinfo_by_sns code
+      userinfo = response.result
+      expect(response.errcode).to eq 0
+      expect(userinfo.present?).to eq true
+    end
 
     it 'user_get_userid_by_code' do
       code = 'f503c6d2f047393e9c0eb8f8d8400874'
@@ -86,7 +117,7 @@ RSpec.describe DingTalk do
   end
 
   describe 'Api::Methods::Department' do
-    department_id = ''
+    department_id = '1'
     it 'department_create' do
       data = {
         name: 'test_dept',
@@ -133,6 +164,13 @@ RSpec.describe DingTalk do
       expect(department.present?).to eq true
     end
 
+    it 'departments' do
+      response = @agent.departments department_id, true
+      departments = response.department
+      expect(response.errcode).to eq 0
+      expect(departments.present?).to eq true
+    end
+
     it 'department_delete' do
       response = @agent.department_delete department_id
       expect(response.errcode).to eq 0
@@ -173,24 +211,30 @@ RSpec.describe DingTalk do
 
   describe 'Api::Methods::Chat' do
     userids = ['284317422039332945', '012350431229173120', '1225573624847741', '64211544511086442']
-    chatid = 'chat927105d13cc07f6aaca6827dd92bc2b2'
-    # it 'chat_create' do
-    #   response = @agent.chat_create '测试建群', @userid, userids
-    #   expect(response.errcode).to eq 0
-    #   chatid = response['chatid']
-    #   expect(chatid.present?).to eq true
-    # end
+    chatid = 'chat70f8ec6b917e9f1240eb9ed13706eaa3'
+    it 'chat_create' do
+      response = @agent.chat_create '测试建群', @userid, userids
+      expect(response.errcode).to eq 0
+      chatid = response['chatid']
+      expect(chatid.present?).to eq true
+    end
 
     it 'chat_update' do
       response = @agent.chat_update chatid, { name: '测试建群aaa' }
       expect(response.errcode).to eq 0
     end
 
-    # it 'chat_get' do
-    #   response = @agent.chat_get chatid
-    #   expect(response.errcode).to eq 0
-    #   expect(response.chat_info['name']).to eq '测试建群aaa'
-    # end
+    it 'chat_get' do
+      response = @agent.chat_get chatid
+      expect(response.errcode).to eq 0
+      expect(response.chat_info['name']).to eq '测试建群aaa'
+    end
+
+    it 'chat_get_qrcode' do
+      response = @agent.chat_get_qrcode chatid, @userid
+      expect(response.errcode).to eq 0
+      expect(response.result.present?).to eq true
+    end
 
     it 'text_chat_send' do
       response = @agent.text_chat_send chatid, '测试文本消息'
@@ -294,7 +338,7 @@ RSpec.describe DingTalk do
 
   end
 
-  describe 'Api::Methods::Chat' do
+  describe 'Api::Methods::Message' do
     userids = ['284317422039332945', 'manager2922']
     department_ids = [1]
     it 'text_message_send' do
@@ -396,6 +440,41 @@ RSpec.describe DingTalk do
       response = @agent.action_card_message_send userids, department_ids, payload
       expect(response.errcode).to eq 0
     end
+  end
+
+  describe 'Api::Methods::Backlog' do
+    backlog_id = 'task35fdbed4909b5cc7ffa4c4eba2b048a6'
+    it 'backlog_create' do
+      payload = {
+        sourceId: 'wiki0000',
+        subject: '[wiki] todo test'
+      }
+      response = @agent.backlog_create @unionid, payload
+      backlog_id = response.id
+      expect(backlog_id.present?).to eq true
+    end
+
+    it 'backlog_get' do
+      response = @agent.backlog_get @unionid, backlog_id
+      backlog_id = response.id
+      expect(backlog_id.present?).to eq true
+    end
+
+    it 'backlog_update' do
+      payload = {
+        subject: 'wiki1111'
+      }
+      response = @agent.backlog_update @unionid, backlog_id, payload
+      result = response.result
+      expect(result).to eq true
+    end
+
+    it 'backlog_delete' do
+      response = @agent.backlog_delete @unionid, backlog_id
+      result = response.result
+      expect(result).to eq true
+    end
+
   end
 
 end

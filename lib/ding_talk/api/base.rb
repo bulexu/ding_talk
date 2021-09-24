@@ -7,6 +7,9 @@ module DingTalk
       include Methods::Media
       include Methods::User
       include Methods::Department
+      include Methods::Message
+      include Methods::Chat
+      include Methods::Backlog
 
       attr_accessor :corp_id, :options
 
@@ -18,6 +21,10 @@ module DingTalk
 
       def request
         @request ||= DingTalk::Request.new(AUTHORIZE_ENDPOINT, false)
+      end
+
+      def open_request
+        @open_request ||= DingTalk::Request.new(AUTHORIZE_ENDPOINT_OPEN, false)
       end
 
       def valid?
@@ -52,6 +59,22 @@ module DingTalk
         with_token(headers[:params]) do |params|
           request.post_file path, file, headers.merge(params: params)
         end
+      end
+
+      def open_get(path, headers = {})
+        open_request.get path, headers
+      end
+
+      def open_post(path, payload={}, headers = {})
+        open_request.post path, payload, headers
+      end
+
+      def open_put(path, payload={}, headers = {})
+        open_request.put path, payload, headers
+      end
+
+      def open_delete(path, headers = {})
+        open_request.delete path, headers
       end
 
       def access_token

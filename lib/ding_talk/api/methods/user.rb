@@ -19,24 +19,21 @@ module DingTalk
           post 'topapi/user/getbyunionid', { unionid: unionid }
         end
 
-        # todo test
-        # def user_update userid, data = {}
-        #   post 'topapi/v2/user/update', data.merge(userid: userid)
-        # end
+        def user_update userid, data = {}
+          post 'topapi/v2/user/update', data.merge(userid: userid)
+        end
 
-        # todo test
-        # def user_create data = {}
-        #   post 'topapi/v2/user/create', data
-        # end
+        def user_create data = {}
+          post 'topapi/v2/user/create', data
+        end
 
         def user_get userid
           post 'topapi/v2/user/get', { userid: userid }
         end
 
-        # todo test
-        # def user_delete userid
-        #   post 'topapi/v2/user/delete', { userid: userid }
-        # end
+        def user_delete userid
+          post 'topapi/v2/user/delete', { userid: userid }
+        end
 
         # https://developers.dingtalk.com/document/app/queries-the-simple-information-of-a-department-user
         def user_simplelist department_id, cursor: 0, size: 10, order_field: 'entry_asc'
