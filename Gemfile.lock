@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ding_talk (0.0.3)
+    ding_talk (0.1.0)
       activesupport (>= 5.0)
       builder (>= 3.2)
       http (>= 2.2)
