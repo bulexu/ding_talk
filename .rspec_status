@@ -1,0 +1,36 @@
+example_id                                | status  | run_time        |
+----------------------------------------- | ------- | --------------- |
+./spec/ding_talk/api/agent_spec.rb[1:1:1] | failed  | 0.10616 seconds |
+./spec/ding_talk/api/agent_spec.rb[1:2:1] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:2:2] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:2:3] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:2:4] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:2:5] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:2:6] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:3:1] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:3:2] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:3:3] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:3:4] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:3:5] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:3:6] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:4:1] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:4:2] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:4:3] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:4:4] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:5:1] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:5:2] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:5:3] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:5:4] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:5:5] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:5:6] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:5:7] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:5:8] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:5:9] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:6:1] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:6:2] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:6:3] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:6:4] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:6:5] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:6:6] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:6:7] | unknown |                 |
+./spec/ding_talk/api/agent_spec.rb[1:6:8] | unknown |                 |

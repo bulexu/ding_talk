@@ -10,9 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Ruby API wrapper for ding talk「钉钉」}
   spec.description   = %q{doing}
-  # spec.homepage      = "TODO: Put your gem's website or public repo URL here."
-
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
+  spec.homepage      = "https://gitee.com/bulexu/ding_talk"
 
   spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }

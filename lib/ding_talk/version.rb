@@ -1,3 +1,4 @@
 module DingTalk
   VERSION = "0.0.3"
+  AUTHOR = "bulexu"
 end
