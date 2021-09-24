@@ -7,7 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ding_talk'
+gem 'ding_talk', git: "https://gitee.com/bulexu/ding_talk"
 ```
 
 And then execute:
