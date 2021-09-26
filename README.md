@@ -14,9 +14,9 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+[comment]: <> (Or install it yourself as:)
 
-    $ gem install ding_talk
+[comment]: <> (    $ gem install ding_talk)
 
 ## Usage
 
